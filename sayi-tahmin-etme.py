@@ -1,7 +1,7 @@
 from random import randint
 
 tutulanSayi = randint(0,100)
-n = 0
+n = 0 #Tahmin etme sayısı
 
 print("******SAYI TAHMİN ETMECE****** \n")
 while True:
@@ -12,7 +12,18 @@ while True:
 
         if tahmin == tutulanSayi:
             print(f"Tebrikler sayıyı buldun! \nTutulan sayı: {tutulanSayi} \nToplam tahmin sayınız: {n}")
-            break
+            
+            devam = input("Tekrar oynamak ister misin? (e/h): ") # e -> oyna h -> bitir
+            if devam == "e":
+                n = 0
+                tutulanSayi = randint(0,100)
+                continue
+            elif devam == "h":
+                print("Hoşçakal...")
+                break
+            else:
+                print("Farklı bir değer girildiğinden oyun bitiriliyor")
+                break
         else:
             print("Tekrar deneyin!")
             if tahmin > tutulanSayi:
